@@ -1,0 +1,77 @@
+                
+            </div><!--/row-->
+            
+            <hr>
+            
+            <footer>
+                <p>&copy; Company 2013</p>
+            </footer>
+            
+        </div><!--/.fluid-container-->
+        <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js" type="text/javascript"></script>
+        <script type="text/javascript" src="js/evol.colorpicker.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $("input.color-picker").colorpicker();
+
+                $("#gotime").click(function() {
+
+                    var BACKGROUND_COLOR = $('#background-color').val() || "''"
+                    , CONTAINER_COLOR = $('#container-color').val() || "''"
+                    , CONTAINER_WIDTH = $('#container-width').val() || "''"
+                    , TITLE_SIZE = $('#title-size').val() || "''"
+                    , TITLE_COLOR = $('#title-color').val() || "''"
+                    , HEADER_SIZE = $('#header-size').val() || "''"
+                    , HEADER_COLOR = $('#header-color').val() || "''"
+                    , SECTION_SIZE = $('#section-size').val() || "''"
+                    , SECTION_COLOR = $('#section-color').val() || "''"
+                    , SECTION_BACKGROUND_COLOR = $('#section-background-color').val() || "''"
+                    , LINK_COLOR = $('#link-color').val() || "''"
+                    , LABEL_COLOR = $('#label-color').val() || "''"
+                    , LABEL_BACKGROUND_COLOR = $('#label-background-color').val() || "''"
+                    , LABEL_TEXT_STYLE = $('#label-font-style').val() || "''"
+                    , STATE_BANNER_URL = $('#state-banner-url').val() || ''
+                    , PORTAL_TITLE = $('#portal-title').val() || "''";
+
+
+                    var ADDR_CHG_LOGIN_HDR_1 = '<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet">';
+                    ADDR_CHG_LOGIN_HDR_1 += '\n<style type="text/css">';
+                    ADDR_CHG_LOGIN_HDR_1 += '\nhtml, body {margin: 0;padding: 0;height: 100%;background:' + BACKGROUND_COLOR +';height:100%;}';
+                    ADDR_CHG_LOGIN_HDR_1 += '\nul{list-style:none;}';
+                    ADDR_CHG_LOGIN_HDR_1 += '\nbody{padding:20px;background-color:'+ CONTAINER_COLOR +';width:'+ CONTAINER_WIDTH +';margin:0 auto;box-shadow:2px 2px 2px black;}';
+                    ADDR_CHG_LOGIN_HDR_1 += '\n.flavorTextTitle{font-size:'+TITLE_SIZE+';color:'+TITLE_COLOR+'}';
+                    ADDR_CHG_LOGIN_HDR_1 += '\n.alert{margin:10px;}';
+                    ADDR_CHG_LOGIN_HDR_1 += "\ndiv[class*='Header']{color:"+HEADER_COLOR+";font-size:"+HEADER_SIZE+";}";
+                    ADDR_CHG_LOGIN_HDR_1 += "\n#addressChangeSubmissionLoginForm{width:"+CONTAINER_WIDTH+"; margin: 0 auto;text-align:center;}";
+                    ADDR_CHG_LOGIN_HDR_1 += '\n</style>';
+                    ADDR_CHG_LOGIN_HDR_1 += "\n<span><img src='"+STATE_BANNER_URL+"' alt='logo'</span>";
+                    ADDR_CHG_LOGIN_HDR_1 += "\n<span class='flavorTextTitle'>"+PORTAL_TITLE+"</span>";
+
+                    var ADDR_CHG_HDR_1 = '<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet">';
+                    ADDR_CHG_HDR_1 += '\n<style type="text/css">';
+                    ADDR_CHG_HDR_1 += '\nhtml, body {margin: 0;padding: 0;height: 100%;background:' + BACKGROUND_COLOR +';height:100%;}';
+                    ADDR_CHG_HDR_1 += '\nul{list-style:none;}';
+                    ADDR_CHG_HDR_1 += '\nform{padding:20px;background-color:'+ CONTAINER_COLOR +';width:'+ CONTAINER_WIDTH +';margin:0 auto;box-shadow:2px 2px 2px black;}';
+                    ADDR_CHG_HDR_1 += '\n.flavorTextTitle{font-size:'+TITLE_SIZE+';color:'+TITLE_COLOR+'}';
+                    ADDR_CHG_HDR_1 += '\n.alert{margin:10px;}';
+                    ADDR_CHG_HDR_1 += '\na{color:'+LINK_COLOR+';}';
+                    ADDR_CHG_HDR_1 += "\ndiv[class*='Label']{margin-left:20px;color:"+LABEL_COLOR+";background-color:"+LABEL_BACKGROUND_COLOR+";font-style:"+LABEL_TEXT_STYLE+";padding:5px;}";
+                    ADDR_CHG_HDR_1 += "\ndiv[class*='Header']{color:"+HEADER_COLOR+";font-size:"+HEADER_SIZE+";}";
+                    ADDR_CHG_HDR_1 += "\n#preCompanyInfoOne, #prePersonalInfoOne, #preUserInfoOne, #preAddressInfoOne {color:"+SECTION_COLOR+";font-size:"+SECTION_SIZE+";background-color:"+SECTION_BACKGROUND_COLOR+"; padding: 5px;}";
+                    ADDR_CHG_HDR_1 += "\ninput[class*='Value'], div[class*='Value'], select[class*='Value'] {margin-left: 20px;}";
+                    ADDR_CHG_HDR_1 += '\n</style>';
+                    ADDR_CHG_HDR_1 += "\n<span><img src='"+STATE_BANNER_URL+"' alt='logo'</span>";
+                    ADDR_CHG_HDR_1 += "\n<span class='flavorTextTitle'>"+PORTAL_TITLE+"</span>";
+
+
+                    $('#ADDR_CHG_LOGIN_HDR_1').val(ADDR_CHG_LOGIN_HDR_1);
+                    $('#ADDR_CHG_HDR_1').val(ADDR_CHG_HDR_1);
+
+                })
+
+            });
+        </script>
+    </body>
+</html>

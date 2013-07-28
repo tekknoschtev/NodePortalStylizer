@@ -1,0 +1,34 @@
+<% include header.html %>
+<div class="span9">
+    <div class="span4">
+        <h4>Input Side</h4>
+        <% fields.forEach(function(field) { %>
+            <% if(field.type == 'select') { %>
+            <label for="<%= field.id %>"><%= field.name %></label>
+            <select id="<%= field.id %>">
+                <option value=""></option>
+                <% field.options.forEach(function(option) { %>
+                <option value="<%= option %>"><%= option %></option>
+                <% }) %>
+            </select>
+            <% } else { %>
+                <label for="<%= field.id %>"><%= field.name %></label>
+                <input class="<%= field.class %>" id="<%= field.id %>" />
+                <% if(field.help) {%><span class="help-inline"><%= field.help %></span><% } %>
+            <% }  %>
+        <% }) %>
+
+        <br /><br />
+        <button id="gotime" class="btn btn-large btn-success">GO TIME</button>
+    </div>
+    <div class="span8">
+        <h4>Output Side</h4>
+
+        <% docs.forEach(function(doc) { %>
+        <h5><%= doc.name %></h5>
+        <textarea id="<%= doc.name %>" class='span12' wrap='off'></textarea>
+        <% }) %>
+    </div>
+</div><!--/span-->
+
+<% include footer.html %>

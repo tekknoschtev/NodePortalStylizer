@@ -2,12 +2,29 @@
 <div class="span9">
     <div class='span6'>
         <h3>Input</h3>
-        <textarea class='span12' id='input' rows='30'></textarea>
-        <button id='gotime' class='btn btn-large btn-success'>GO TIME!</button>
+        <form action='/prsr' method='post'>
+            <textarea name ='input' class='span12' id='input' rows='30'><%= input %></textarea>
+            <label for='testType'>Test Type</label>
+            <select id='testType' name='testType'>
+                <option></option>
+                <option value='testSteps'>Test Steps</option>
+                <option value='regressionSteps'>Regression Steps</option>
+                <option value='both'>Both</option>
+            </select>
+            <label for='format'>Test Type</label>
+            <select id='format' name='format'>
+                <option value=''></option>
+                <option value='wiki'>Wiki</option>
+                <option value='jira'>JIRA</option>
+                <option value='csv'>CSV</option>
+            </select>
+            <br />
+            <input type='submit' id='gotime' class='btn btn-large btn-success' value='Go Time!'>
+        </form>
     </div>
     <div class='span6'>
         <h3>Output</h3>
-        <textarea class='span12' id='output' rows='30'></textarea>
+        <textarea class='span12' id='output' rows='30'><%= output %></textarea>
     </div>
 </div>
 <% include footer.html %>

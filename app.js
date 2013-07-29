@@ -115,7 +115,10 @@ app.get('/docsub', function(req,res) {
     })
 });
 app.get('/prsr', function(req,res) {
-    res.render('prsr', {path: req.path})
+    res.render('prsr', {path: req.path, input: '', output: ''})
+});
+app.post('/prsr', function(req,res) {
+    res.render('prsr', {path: req.path, input: req.body.input, output: "test" })
 });
 
 http.createServer(app).listen(app.get('port'), function(){

@@ -75,7 +75,7 @@ app.use(express.methodOverride());
 app.use(app.router);
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/public', express.static(__dirname + '/public'));
-app.use(function(req,res) {res.render('404');} );
+app.use(function(req,res) {res.render('404', {path: req.path});} );
 
 // development only
 if ('development' == app.get('env')) {

@@ -2,7 +2,8 @@ var express = require('express')
   , routes = require('./routes')
   , user = require('./routes/user')
   , http = require('http')
-  , path = require('path');  
+  , path = require('path')
+  , jsyaml = require('js-yaml');  
 
 var app = express();
 
@@ -118,9 +119,21 @@ app.get('/prsr', function(req,res) {
     res.render('prsr', {path: req.path, input: '', output: ''})
 });
 app.post('/prsr', function(req,res) {
-    res.render('prsr', {path: req.path, input: req.body.input, output: "test" })
+    var testType = req.body.testType;
+    
+    var yamlText = jsyaml.safeLoad(req.body.input);
+    
+    var markup = _buildWikiTestPlan(yamlText, testType);
+    
+    res.render('prsr', {path: req.path, input: req.body.input, output: markup })
 });
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
 });
+
+function _buildWikiTestPlan(yamlText, testTypes) {
+    markup = "test!";
+    
+    return JSON.stringify(yamlText);
+}
